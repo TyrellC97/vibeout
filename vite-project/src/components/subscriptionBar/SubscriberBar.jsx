@@ -7,13 +7,12 @@ import axios from "axios";
 function subscriberBar() {
   let [subscribers, setSubscribers] = useState([{}])
 
-
+  const url = "http://localhost:3001/getSubs"
 
   useEffect(() => {
-    axios.get("http://localhost:3001/getSubs")
-    .then(subs => setSubscribers(subs.data))
-    .catch(err => console.log(err))
-    console.log(subscribers)
+     const fetchSubs = async () => { const result = await fetch(url)
+    console.log(result)} 
+    fetchSubs()
   }, [])
 
 
