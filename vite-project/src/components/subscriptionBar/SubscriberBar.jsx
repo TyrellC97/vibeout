@@ -10,7 +10,10 @@ function subscriberBar() {
 
 
   useEffect(() => {
-    axios.get("http://localhost:3000/subscribers").then(subscribers => setSubscribers(subscribers.data)).catch(err => console.log(err))
+    axios.get("http://localhost:3001/getSubs")
+    .then(subs => setSubscribers(subs.data))
+    .catch(err => console.log(err))
+    console.log(subscribers)
   }, [])
 
 
